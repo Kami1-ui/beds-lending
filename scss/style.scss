@@ -1,0 +1,606 @@
+@import "_nullstyle.scss"; //обнуляющие стили
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
+@import "fonts.scss";
+
+$maxWidth: 1920;
+$maxWidthContainer: 1770;
+
+@mixin adaptiv-value($prop, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+    @if $type==1 {
+        //Тольбко если меньше контейнера
+        #{$prop}: $startSize + px;
+        @media (max-width: #{$maxWidthContainer + px}) {
+            #{$prop}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 360px) / #{$maxWidthContainer - 360}));
+        }
+    } @else if $type==2 {
+        //Тольбко если больше контейнера
+        #{$prop}: $startSize + px;
+        @media (max-width: #{$maxWidthContainer + px}) {
+            #{$prop}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 360px) / #{$maxWidth - 360}));
+        }
+    } @else {
+        #{$prop}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 360px) / #{$maxWidth - 360}));
+    }
+}
+
+$breakModile: 767px;
+$mobileWidth: 520px;
+.container {
+    max-width: 1770px;
+    padding: 0px 20px;
+    margin: 0px auto;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+.title {
+    h2 {
+        font-family: "Peace Sans";
+        @include adaptiv-value(line-height, 67, 35, 1);
+        @include adaptiv-value(font-size, 48, 25, 1);
+        color: #333534;
+    }
+    .color-green {
+        color: #37b19c;
+    }
+}
+.btn-pink {
+    $break1: $breakModile;
+    background: #f2a9b2;
+    border-radius: 25px;
+
+    padding: 0 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333534;
+
+    height: 51px;
+    @include adaptiv-value(font-size, 18, 14, 1);
+    @include adaptiv-value(height, 51, 39, 1);
+
+    @media (max-width: $break1) {
+        color: #fff;
+    }
+    @media (min-width: $break1) {
+        transition: background 0.5s ease-out;
+        &:hover {
+            background-color: #ffbec6;
+        }
+    }
+}
+
+.background-start {
+    $break1: $breakModile;
+    background: url(.././img/start-bg1.png) bottom / cover no-repeat;
+    @media (max-width: $break1) {
+        margin-top: 18px;
+        background: url(.././img/start-bg2.png) 0 0/100% 100% no-repeat;
+    }
+}
+.header {
+    $break1: $breakModile;
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 20px;
+        margin-bottom: 64px;
+        @media (max-width: $break1) {
+            margin-bottom: 24px;
+        }
+    }
+
+    &__logo {
+        img {
+            height: 40px;
+        }
+    }
+
+    &__call {
+        @media (max-width: $break1) {
+            display: none;
+        }
+    }
+
+    &__numbers {
+        display: flex;
+        flex-direction: column;
+        font-weight: bold;
+
+        @include adaptiv-value(font-size, 22, 14, 1);
+        @include adaptiv-value(line-height, 35, 22, 1);
+
+        color: #37b19c;
+    }
+    &__request {
+        @include adaptiv-value(font-size, 20, 13, 1);
+        @include adaptiv-value(line-height, 30, 20, 1);
+
+        color: #37b19c;
+        padding-bottom: 5px;
+        border-bottom: 1px dashed #37b19c;
+    }
+}
+
+.start {
+    $break1: $breakModile;
+    padding-bottom: 98px;
+
+    @media (max-width: $break1) {
+        background: url(.././img/start-img2.png) center / auto 100% no-repeat;
+        padding: 0;
+        height: 482px;
+        display: flex;
+        align-items: center;
+    }
+    &__body {
+        display: flex;
+        align-items: center;
+        @media (max-width: $break1) {
+            justify-content: center;
+        }
+    }
+
+    &__description {
+        flex: 0 1 653px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        @media (max-width: $break1) {
+            align-items: center;
+            flex: 0 1 297px;
+        }
+    }
+    &__title {
+        max-width: 100%;
+        @include adaptiv-value(margin-bottom, 60, 30, 1);
+
+        @media (max-width: $break1) {
+            text-align: center;
+            h2 {
+                color: #fff;
+            }
+            .color-green {
+                color: #fff;
+            }
+        }
+    }
+    &__text {
+        max-width: 100%;
+        font-weight: 300;
+        color: #333534;
+
+        @include adaptiv-value(line-height, 35, 20, 1);
+        @include adaptiv-value(font-size, 22, 14, 1);
+
+        @include adaptiv-value(margin-bottom, 90, 40, 1);
+
+        @media (max-width: $break1) {
+            color: #fff;
+            text-align: center;
+        }
+    }
+    &__img {
+        flex: 0 1 1023px;
+        img {
+            max-width: 100%;
+        }
+        @media (max-width: $break1) {
+            display: none;
+        }
+    }
+}
+
+.beds {
+    $break1: $breakModile;
+
+    @include adaptiv-value(padding-top, 90, 50, 1);
+    @include adaptiv-value(padding-bottom, 150, 40, 1);
+
+    &__title {
+        display: flex;
+        justify-content: center;
+
+        @include adaptiv-value(margin-bottom, 80, 60, 1);
+
+        h2 {
+            text-align: center;
+        }
+    }
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: 1536px;
+        @media (max-width: $break1) {
+            flex-direction: column;
+            max-width: $mobileWidth;
+        }
+    }
+
+    &__item {
+        flex: 0 1 335px;
+        margin-right: 60px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        @media (max-width: $break1) {
+            padding: 0;
+            margin: 0;
+            flex: 1 1 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 60px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__img {
+        img {
+            width: 100%;
+        }
+        margin-bottom: 40px;
+
+        @media (max-width: $break1) {
+            margin: 0 20px 0 0;
+            flex: 0 0 30%;
+        }
+    }
+
+    &__text {
+        @include adaptiv-value(line-height, 30, 15, 1);
+        @include adaptiv-value(font-size, 20, 12, 1);
+
+        text-align: center;
+        font-weight: 300;
+        color: #373737;
+        @media (max-width: $break1) {
+            text-align: left;
+        }
+    }
+}
+
+.about {
+    $break1: 1160px;
+    @media (max-width: $break1) {
+        .container {
+            padding: 0;
+        }
+    }
+    &__body {
+        display: flex;
+        background: url(.././img/bg2.png) 0 0 / auto 100% no-repeat;
+        justify-content: space-between;
+        padding: 0 36px 0 72px;
+
+        @media (max-width: $break1) {
+            justify-content: center;
+            padding: 0 20px;
+        }
+
+        @include adaptiv-value(padding-top, 132, 77, 1);
+        @include adaptiv-value(padding-bottom, 120, 83, 1);
+    }
+    &__title {
+        max-width: 100%;
+        margin-bottom: 60px;
+        @media (max-width: $break1) {
+            text-align: center;
+        }
+    }
+    &__description {
+        display: flex;
+        flex: 0 1 755px;
+        max-width: 755px;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 40px;
+        @media (max-width: $break1) {
+            align-items: center;
+            margin-right: 0;
+            max-width: $mobileWidth;
+            margin: 0 auto;
+        }
+    }
+
+    &__text {
+        @include adaptiv-value(line-height, 35, 20, 1);
+        @include adaptiv-value(font-size, 22, 14, 1);
+        color: #333534;
+        margin-bottom: 55px;
+        font-weight: 300;
+        max-width: 100%;
+
+        @media (max-width: $break1) {
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+    &__img {
+        flex: 0 1 828px;
+        img {
+            width: 100%;
+        }
+        @media (max-width: $break1) {
+            display: none;
+        }
+    }
+}
+
+.why-us {
+    $break1: 1122px;
+    $break2: $breakModile;
+
+    @include adaptiv-value(padding-top, 175, 60, 1);
+    @include adaptiv-value(padding-bottom, 100, 28, 1);
+
+    &__description {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__title {
+        margin-bottom: 60px;
+        @media (max-width: $break2) {
+            text-align: center;
+        }
+    }
+
+    &__text {
+        @include adaptiv-value(line-height, 30, 15, 1);
+        @include adaptiv-value(font-size, 20, 12, 1);
+
+        text-align: center;
+        color: #333534;
+        max-width: 835px;
+        font-weight: 300;
+        @include adaptiv-value(margin-bottom, 123, 40, 1);
+        @media (max-width: $break2) {
+            display: none;
+        }
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: $break2) {
+            margin: 0 auto;
+            max-width: $mobileWidth;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__item {
+        flex: 0 1 344px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 40px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+        @media (max-width: $break2) {
+            margin-right: 0;
+            flex: 1 1 auto;
+            flex-direction: row;
+            margin-bottom: 30px;
+        }
+    }
+
+    &__img {
+        height: 235px;
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 40px;
+
+        img {
+            width: 100%;
+        }
+
+        @media (max-width: $break1) {
+            height: 180px;
+        }
+        @media (max-width: $break1) {
+            height: 100%;
+            margin: 0 20px 0 0;
+            flex: 0 0 30%;
+        }
+    }
+
+    &__item-text {
+        @include adaptiv-value(line-height, 30, 15, 1);
+        @include adaptiv-value(font-size, 20, 12, 1);
+
+        text-align: center;
+        color: #333534;
+        font-weight: 300;
+        max-width: 100%;
+        @media (max-width: $break2) {
+            text-align: left;
+            flex: 0 1 70%;
+        }
+    }
+}
+.request {
+    $break1: $breakModile;
+
+    @include adaptiv-value(margin-top, 180, 0, 1);
+    @include adaptiv-value(margin-bottom, 180, 30, 1);
+
+    @media (max-width: $break1) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 461px;
+        background: url(.././img/rerquest-img2.png) center / auto 100% no-repeat;
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__img {
+        flex: 0 1 969px;
+        margin-right: 40px;
+        img {
+            max-width: 100%;
+        }
+
+        @media (max-width: $break1) {
+            display: none;
+        }
+    }
+
+    &__description {
+        flex: 0 1 610px;
+        @media (max-width: $break1) {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+    }
+
+    &__title {
+        @include adaptiv-value(margin-bottom, 90, 40, 1);
+
+        @media (max-width: $break1) {
+            h2 {
+                text-align: center;
+                color: #fff;
+            }
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+
+        @include adaptiv-value(width, 293, 190, 1);
+        input {
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 25px;
+            padding: 8px 36px;
+
+            @include adaptiv-value(font-size, 18, 14, 1);
+            @include adaptiv-value(line-heigh, 35, 20, 1);
+
+            @include adaptiv-value(margin-bottom, 40, 20, 1);
+            @media (max-width: $break1) {
+                background-color: transparent;
+                border-color: #fff;
+                color: #fff;
+                &::placeholder {
+                    color: #fff;
+                }
+            }
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    }
+}
+
+.footer {
+    $break1: 1260px;
+    $break2: $breakModile;
+    background: #e1f4ee;
+    &__body {
+        display: flex;
+        align-items: center;
+
+        @include adaptiv-value(height, 335, 129, 1);
+
+        max-width: 1200px;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        flex: 0 1 429px;
+        margin-right: 22px;
+
+        img {
+            max-width: 100%;
+        }
+    }
+    &__row {
+        display: flex;
+        flex: 0 1 548px;
+        justify-content: space-between;
+
+        @media (max-width: $break1) {
+            justify-content: center;
+        }
+    }
+    &__item {
+        margin-right: 90px;
+        &:last-child {
+            margin-right: 0;
+        }
+        @media (max-width: $break2) {
+            margin-right: 20px;
+        }
+    }
+
+    &__title {
+        font-weight: bold;
+
+        @include adaptiv-value(font-size, 22, 14, 1);
+        @include adaptiv-value(line-heigh, 35, 20, 1);
+
+        color: #373737;
+        margin-bottom: 26px;
+
+        @media (max-width: $break2) {
+            display: none;
+        }
+    }
+    &__title-min {
+        font-weight: 300;
+        margin-bottom: 15px;
+        @media (min-width: $break2) {
+            display: none;
+        }
+    }
+
+    &__lable {
+        @include adaptiv-value(font-size, 18, 8, 1);
+        @include adaptiv-value(line-heigh, 25, 15, 1);
+
+        color: #373737;
+        margin-bottom: 12px;
+    }
+    &__social {
+        display: flex;
+        i {
+            @include adaptiv-value(font-size, 40, 25, 1);
+            @include adaptiv-value(margin-right, 15, 6, 1);
+
+            color: #373737;
+        }
+    }
+    &__number {
+        display: flex;
+        flex-direction: column;
+        span {
+            margin-bottom: 6px;
+        }
+    }
+}
