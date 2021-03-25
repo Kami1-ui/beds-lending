@@ -18,7 +18,7 @@ $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, 
 $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
 
 $mail->setFrom('bonlinelending@mail.ru'); // от кого будет уходить письмо?
-$mail->addAddress('bagavetdinovairat@gmail.com');     // Кому будет уходить письмо 
+$mail->addAddress('dveriplusmebel@gmail.com');     // Кому будет уходить письмо 
 
 //$mail->addAddress('ellen@example.com');               // Name is optional
 //$mail->addReplyTo('info@example.com', 'Information');
