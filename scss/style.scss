@@ -579,17 +579,10 @@ body {
 
     &__body {
         display: flex;
-        //align-items: center;
-        //  height: 335px;
-        // @include adaptiv-value(height, 335, 129, 1);
-
         max-width: 1200px;
         justify-content: space-between;
         @media (max-width: $break2) {
-            //  flex-direction: column;
-            //align-items: flex-start;
             flex-wrap: wrap;
-            //max-width: $mobileWidth;
         }
 
         @media (max-width: $break3) {
@@ -599,15 +592,11 @@ body {
     }
 
     &__logo {
-        //  flex: 0 1 429px;
         flex: 0 1 36%;
         margin-right: 60px;
 
         img {
             max-width: 100%;
-        }
-        @media (max-width: $break1) {
-            // flex: 0 1 340px;
         }
         @media (max-width: $break2) {
             flex: 1 1 auto;
@@ -681,3 +670,17 @@ body {
     }
 }
 /*#endregion*/
+
+.sent {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: $mobileWidth;
+}
+
+.sent-title {
+    padding: 10% 5%;
+    background: url(.././img/bg2.png) 0 0 / 100% 100% no-repeat;
+}
