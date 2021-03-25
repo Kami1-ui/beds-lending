@@ -12,8 +12,8 @@ $phone = $_POST['Phone'];
 $mail->isSMTP();                                      // Set mailer to use SMTP
 $mail->Host = 'smtp.mail.ru';  																							// Specify main and backup SMTP servers
 $mail->SMTPAuth = true;                               // Enable SMTP authentication
-$mail->Username = 'kamil.kuz@mail.ru'; // Ваш логин от почты с которой будут отправляться письма
-$mail->Password = '1998re26'; // Ваш пароль от почты с которой будут отправляться письма
+$mail->Username = 'site@mail.ru'; // Ваш логин от почты с которой будут отправляться письма
+$mail->Password = '555555'; // Ваш пароль от почты с которой будут отправляться письма
 $mail->SMTPSecure = 'ssl';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 465; // TCP port to connect to / этот порт может отличаться у других провайдеров
 
