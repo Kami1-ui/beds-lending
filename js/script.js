@@ -7,6 +7,11 @@ $('a[href*="#"]').click(function () {
     return false;
 });
 
+document.body.onload = function () {
+    $('.load').toggleClass('preloader_done');
+    $('body').toggleClass('lock');
+}
+
 $(document).ready(function () {
 
     //E-mail Ajax Send
