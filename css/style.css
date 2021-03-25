@@ -114,6 +114,126 @@ h1, h2, h3, h4, h5, h6 {
   content: "\e901";
 }
 
+/*#region=====================================Анимация загрузки страницы*/
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.loading-whell {
+  width: 100px;
+  height: 100px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  border-top-color: #275988;
+  -webkit-animation: 2s spin infinite linear;
+          animation: 2s spin infinite linear;
+}
+
+.preloader {
+  background: white;
+  z-index: 3;
+  -webkit-transition: 1s all;
+  transition: 1s all;
+  opacity: 1;
+  visibility: visible;
+}
+
+.preloader__loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.preloader_done {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.load {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*#endregion */
+/*#region===================Прелоудер 2*/
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid #37b19c;
+  opacity: 1;
+  border-radius: 50%;
+  -webkit-animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+          animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.lds-ripple div:nth-child(2) {
+  -webkit-animation-delay: -0.5s;
+          animation-delay: -0.5s;
+}
+
+@-webkit-keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+/*#endregion*/
 /*!
  * Load Awesome v1.1.0 (http://github.danielcardoso.net/load-awesome/)
  * Copyright 2015 Daniel Cardoso <@DanielCardoso>
@@ -247,126 +367,9 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/*#region=====================================Анимация загрузки страницы*/
-@-webkit-keyframes spin {
-  from {
-    -webkit-transform: translate(-50%, -50%) rotate(0deg);
-            transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    -webkit-transform: translate(-50%, -50%) rotate(360deg);
-            transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-@keyframes spin {
-  from {
-    -webkit-transform: translate(-50%, -50%) rotate(0deg);
-            transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    -webkit-transform: translate(-50%, -50%) rotate(360deg);
-            transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-.loading-whell {
-  width: 100px;
-  height: 100px;
-  border: 3px solid transparent;
-  border-radius: 50%;
-  border-top-color: #275988;
-  -webkit-animation: 2s spin infinite linear;
-          animation: 2s spin infinite linear;
-}
-
-.preloader {
-  background: white;
-  z-index: 3;
-  -webkit-transition: 1s all;
-  transition: 1s all;
-  opacity: 1;
-  visibility: visible;
-}
-
-.preloader__loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
-
-.preloader_done {
-  opacity: 0;
-  visibility: hidden;
-}
-
-.load {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
-
-/*#endregion */
-/*#region===================Прелоудер 2*/
-.lds-ripple {
-  display: inline-block;
-  position: relative;
-  width: 80px;
-  height: 80px;
-}
-
-.lds-ripple div {
-  position: absolute;
-  border: 4px solid #37b19c;
-  opacity: 1;
-  border-radius: 50%;
-  -webkit-animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-          animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-}
-
-.lds-ripple div:nth-child(2) {
-  -webkit-animation-delay: -0.5s;
-          animation-delay: -0.5s;
-}
-
-@-webkit-keyframes lds-ripple {
-  0% {
-    top: 36px;
-    left: 36px;
-    width: 0;
-    height: 0;
-    opacity: 1;
-  }
-  100% {
-    top: 0px;
-    left: 0px;
-    width: 72px;
-    height: 72px;
-    opacity: 0;
-  }
-}
-
-@keyframes lds-ripple {
-  0% {
-    top: 36px;
-    left: 36px;
-    width: 0;
-    height: 0;
-    opacity: 1;
-  }
-  100% {
-    top: 0px;
-    left: 0px;
-    width: 72px;
-    height: 72px;
-    opacity: 0;
-  }
-}
-
+/*#region===================Миксины*/
 /*#endregion*/
+/*#region===================Общие стили*/
 .container {
   max-width: 1770px;
   padding: 0px 20px;
@@ -375,6 +378,12 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   font-family: "Roboto", sans-serif;
+}
+
+@media (max-width: 767px) {
+  body.lock {
+    overflow: hidden;
+  }
 }
 
 .title h2 {
@@ -447,6 +456,8 @@ body {
   }
 }
 
+/*#endregion*/
+/*#region===================Начальная секция*/
 .background-start {
   background: url(.././img/start-bg1.png) bottom/cover no-repeat;
 }
@@ -669,6 +680,8 @@ body {
   }
 }
 
+/*#endregion*/
+/*#region===================Кровати*/
 .beds {
   padding-top: 90px;
   padding-bottom: 150px;
@@ -804,6 +817,8 @@ body {
   }
 }
 
+/*#endregion*/
+/*#region===================О нас*/
 @media (max-width: 1160px) {
   .about .container {
     padding: 0;
@@ -928,6 +943,8 @@ body {
   }
 }
 
+/*#endregion*/
+/*#region===================Почему мы*/
 .why-us {
   padding-top: 175px;
   padding-bottom: 100px;
@@ -1121,6 +1138,8 @@ body {
   }
 }
 
+/*#endregion*/
+/*#region===================Обратная связь*/
 .request {
   margin-top: 180px;
   margin-bottom: 180px;
@@ -1245,7 +1264,7 @@ body {
   border-radius: 25px;
   padding: 8px 36px;
   font-size: 18px;
-  line-heigh: 35px;
+  line-height: 35px;
   margin-bottom: 40px;
 }
 
@@ -1257,7 +1276,7 @@ body {
 
 @media (max-width: 1770px) {
   .request__form input {
-    line-heigh: calc(20px + 15 * ((100vw - 360px) / 1410));
+    line-height: calc(20px + 15 * ((100vw - 360px) / 1410));
   }
 }
 
@@ -1291,6 +1310,8 @@ body {
   margin-top: 20px;
 }
 
+/*#endregion*/
+/*#region===================Подвал*/
 .footer {
   background: #e1f4ee;
   padding-top: 81px;
@@ -1405,20 +1426,20 @@ body {
 .footer__title {
   font-weight: bold;
   font-size: 22px;
-  line-heigh: 35px;
+  line-height: 35px;
   color: #373737;
   margin-bottom: 26px;
 }
 
 @media (max-width: 1770px) {
   .footer__title {
-    font-size: calc(16px + 6 * ((100vw - 360px) / 1410));
+    font-size: calc(14px + 8 * ((100vw - 360px) / 1410));
   }
 }
 
 @media (max-width: 1770px) {
   .footer__title {
-    line-heigh: calc(24px + 11 * ((100vw - 360px) / 1410));
+    line-height: calc(24px + 11 * ((100vw - 360px) / 1410));
   }
 }
 
@@ -1431,20 +1452,20 @@ body {
 
 .footer__lable {
   font-size: 18px;
-  line-heigh: 25px;
+  line-height: 25px;
   color: #373737;
   margin-bottom: 12px;
 }
 
 @media (max-width: 1770px) {
   .footer__lable {
-    font-size: calc(14px + 4 * ((100vw - 360px) / 1410));
+    font-size: calc(13px + 5 * ((100vw - 360px) / 1410));
   }
 }
 
 @media (max-width: 1770px) {
   .footer__lable {
-    line-heigh: calc(20px + 5 * ((100vw - 360px) / 1410));
+    line-height: calc(18px + 7 * ((100vw - 360px) / 1410));
   }
 }
 
@@ -1485,3 +1506,5 @@ body {
 .footer__number span {
   margin-bottom: 6px;
 }
+
+/*#endregion*/

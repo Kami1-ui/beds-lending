@@ -1,8 +1,9 @@
 @import "_nullstyle.scss"; //обнуляющие стили
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap");
-@import "fonts.scss";
-@import "loader.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap"); //шрифты Google
+@import "fonts.scss"; //Мои шрифты
+@import "loader.scss"; //Анимация зпгрузки
 
+/*#region===================Миксины*/
 $maxWidth: 1920;
 $maxWidthContainer: 1770;
 
@@ -24,92 +25,12 @@ $maxWidthContainer: 1770;
         #{$prop}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 360px) / #{$maxWidth - 360}));
     }
 }
+/*#endregion*/
 
+/*#region===================Общие стили*/
 $breakModile: 767px;
 $mobileWidth: 520px;
 
-/*#region=====================================Анимация загрузки страницы*/
-@keyframes spin {
-    from {
-        transform: translate(-50%, -50%) rotate(0deg);
-    }
-    to {
-        transform: translate(-50%, -50%) rotate(360deg);
-    }
-}
-
-.loading-whell {
-    width: 100px;
-    height: 100px;
-    border: 3px solid transparent;
-    border-radius: 50%;
-    border-top-color: #275988; //#d92928;
-    animation: 2s spin infinite linear;
-}
-
-.preloader {
-    background: white;
-    z-index: 3;
-    transition: 1s all;
-    opacity: 1;
-    visibility: visible;
-    &__loader {
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-    &_done {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-.load {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-/*#endregion */
-
-/*#region===================Прелоудер 2*/
-
-.lds-ripple {
-    display: inline-block;
-    position: relative;
-    width: 80px;
-    height: 80px;
-}
-.lds-ripple div {
-    position: absolute;
-    border: 4px solid #37b19c;
-    opacity: 1;
-    border-radius: 50%;
-    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-}
-.lds-ripple div:nth-child(2) {
-    animation-delay: -0.5s;
-}
-@keyframes lds-ripple {
-    0% {
-        top: 36px;
-        left: 36px;
-        width: 0;
-        height: 0;
-        opacity: 1;
-    }
-    100% {
-        top: 0px;
-        left: 0px;
-        width: 72px;
-        height: 72px;
-        opacity: 0;
-    }
-}
-
-/*#endregion*/
 .container {
     max-width: 1770px;
     padding: 0px 20px;
@@ -118,6 +39,11 @@ $mobileWidth: 520px;
 
 body {
     font-family: "Roboto", sans-serif;
+    @media (max-width: 767px) {
+        &.lock {
+            overflow: hidden;
+        }
+    }
 }
 
 .title {
@@ -156,7 +82,9 @@ body {
         }
     }
 }
+/*#endregion*/
 
+/*#region===================Начальная секция*/
 .background-start {
     $break1: $breakModile;
     background: url(.././img/start-bg1.png) bottom / cover no-repeat;
@@ -165,6 +93,7 @@ body {
         background: url(.././img/start-bg2.png) 0 0/100% 100% no-repeat;
     }
 }
+
 .header {
     $break1: $breakModile;
     &__body {
@@ -279,7 +208,9 @@ body {
         }
     }
 }
+/*#endregion*/
 
+/*#region===================Кровати*/
 .beds {
     $break1: $breakModile;
 
@@ -353,7 +284,9 @@ body {
         }
     }
 }
+/*#endregion*/
 
+/*#region===================О нас*/
 .about {
     $break1: 1160px;
     @media (max-width: $break1) {
@@ -420,7 +353,9 @@ body {
         }
     }
 }
+/*#endregion*/
 
+/*#region===================Почему мы*/
 .why-us {
     $break1: 1122px;
     $break2: $breakModile;
@@ -519,6 +454,9 @@ body {
         }
     }
 }
+/*#endregion*/
+
+/*#region===================Обратная связь*/
 .request {
     $break1: $breakModile;
 
@@ -583,7 +521,7 @@ body {
             padding: 8px 36px;
 
             @include adaptiv-value(font-size, 18, 14, 1);
-            @include adaptiv-value(line-heigh, 35, 20, 1);
+            @include adaptiv-value(line-height, 35, 20, 1);
 
             @include adaptiv-value(margin-bottom, 40, 20, 1);
             @media (max-width: $break1) {
@@ -601,7 +539,9 @@ body {
         }
     }
 }
+/*#endregion*/
 
+/*#region===================Подвал*/
 .footer {
     $break1: 1260px;
     $break2: $breakModile;
@@ -677,8 +617,8 @@ body {
     &__title {
         font-weight: bold;
 
-        @include adaptiv-value(font-size, 22, 16, 1);
-        @include adaptiv-value(line-heigh, 35, 24, 1);
+        @include adaptiv-value(font-size, 22, 14, 1);
+        @include adaptiv-value(line-height, 35, 24, 1);
 
         color: #373737;
         margin-bottom: 26px;
@@ -691,8 +631,8 @@ body {
     }
 
     &__lable {
-        @include adaptiv-value(font-size, 18, 14, 1);
-        @include adaptiv-value(line-heigh, 25, 20, 1);
+        @include adaptiv-value(font-size, 18, 13, 1);
+        @include adaptiv-value(line-height, 25, 18, 1);
 
         color: #373737;
         margin-bottom: 12px;
@@ -714,3 +654,4 @@ body {
         }
     }
 }
+/*#endregion*/
