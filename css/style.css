@@ -1007,14 +1007,9 @@ body {
   width: 100%;
 }
 
-@media (max-width: 1122px) {
+@media (max-width: 767px) {
   .why-us__img {
     height: 180px;
-  }
-}
-
-@media (max-width: 1122px) {
-  .why-us__img {
     height: 100%;
     margin: 0 20px 0 0;
     -webkit-box-flex: 0;

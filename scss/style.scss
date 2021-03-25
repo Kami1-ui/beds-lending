@@ -386,8 +386,7 @@ body {
 
 /*#region===================Почему мы*/
 .why-us {
-    $break1: 1122px;
-    $break2: $breakModile;
+    $break1: $breakModile;
 
     @include adaptiv-value(padding-top, 175, 60, 1);
     @include adaptiv-value(padding-bottom, 100, 28, 1);
@@ -400,7 +399,7 @@ body {
 
     &__title {
         margin-bottom: 60px;
-        @media (max-width: $break2) {
+        @media (max-width: $break1) {
             text-align: center;
         }
     }
@@ -414,7 +413,7 @@ body {
         max-width: 835px;
         font-weight: 300;
         @include adaptiv-value(margin-bottom, 123, 40, 1);
-        @media (max-width: $break2) {
+        @media (max-width: $break1) {
             display: none;
         }
     }
@@ -423,7 +422,7 @@ body {
         display: flex;
         justify-content: space-between;
 
-        @media (max-width: $break2) {
+        @media (max-width: $break1) {
             margin: 0 auto;
             max-width: $mobileWidth;
             flex-direction: column;
@@ -441,7 +440,7 @@ body {
         &:last-child {
             margin-right: 0;
         }
-        @media (max-width: $break2) {
+        @media (max-width: $break1) {
             margin-right: 0;
             flex: 1 1 auto;
             flex-direction: row;
@@ -461,8 +460,6 @@ body {
 
         @media (max-width: $break1) {
             height: 180px;
-        }
-        @media (max-width: $break1) {
             height: 100%;
             margin: 0 20px 0 0;
             flex: 0 0 30%;
@@ -477,7 +474,7 @@ body {
         color: #333534;
         font-weight: 300;
         max-width: 100%;
-        @media (max-width: $break2) {
+        @media (max-width: $break1) {
             text-align: left;
             flex: 0 1 70%;
         }
