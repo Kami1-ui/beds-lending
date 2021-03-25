@@ -27,6 +27,34 @@ $maxWidthContainer: 1770;
 }
 /*#endregion*/
 
+/*#region===================Прелоудер*/
+.preloader {
+    background: white;
+    z-index: 3;
+    transition: 1s all;
+    opacity: 1;
+    visibility: visible;
+    &__loader {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+    &_done {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.load {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+/*#endregion*/
+
 /*#region===================Общие стили*/
 $breakModile: 767px;
 $mobileWidth: 520px;
@@ -126,8 +154,9 @@ body {
 
         @include adaptiv-value(font-size, 22, 14, 1);
         @include adaptiv-value(line-height, 35, 22, 1);
-
-        color: #37b19c;
+        a {
+            color: #37b19c;
+        }
     }
     &__request {
         @include adaptiv-value(font-size, 20, 13, 1);
