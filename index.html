@@ -168,17 +168,10 @@
                     <div class="title request__title">
                         <h2>Хотите узнать больше?</h2>
                     </div>
-                    <form class="request__form">
-
-                        <!-- Hidden Required Fields -->
-                        <input type="hidden" name="project_name" value="Site Name">
-                        <input type="hidden" name="admin_email" value="admin@mail.com">
-                        <input type="hidden" name="form_subject" value="Form Subject">
-                        <!-- END Hidden Required Fields -->
-
+                    <form class="request__form" action="mail.php" method="POST">
                         <input type="text" name="Name" placeholder="Имя" required>
                         <input type="text" name="Phone" placeholder="Телефон" required>
-                        <button class="btn-pink">Оставить заявку</button>
+                        <button type="submit" class="btn-pink">Оставить заявку</button>
                     </form>
                 </div>
             </div>
