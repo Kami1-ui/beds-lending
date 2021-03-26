@@ -85,6 +85,15 @@ body {
         color: #37b19c;
     }
 }
+
+.text-md {
+    @include adaptiv-value(line-height, 35, 20, 1);
+    @include adaptiv-value(font-size, 22, 14, 1);
+}
+.text-sm {
+    @include adaptiv-value(line-height, 30, 15, 1);
+    @include adaptiv-value(font-size, 20, 12, 1);
+}
 .btn-pink {
     $break1: $breakModile;
     background: #f2a9b2;
@@ -217,9 +226,6 @@ body {
         font-weight: 300;
         color: #333534;
 
-        @include adaptiv-value(line-height, 35, 20, 1);
-        @include adaptiv-value(font-size, 22, 14, 1);
-
         @include adaptiv-value(margin-bottom, 90, 40, 1);
 
         @media (max-width: $break1) {
@@ -302,9 +308,6 @@ body {
     }
 
     &__text {
-        @include adaptiv-value(line-height, 30, 15, 1);
-        @include adaptiv-value(font-size, 20, 12, 1);
-
         text-align: center;
         font-weight: 300;
         color: #373737;
@@ -360,8 +363,6 @@ body {
     }
 
     &__text {
-        @include adaptiv-value(line-height, 35, 20, 1);
-        @include adaptiv-value(font-size, 22, 14, 1);
         color: #333534;
         margin-bottom: 55px;
         font-weight: 300;
@@ -384,9 +385,83 @@ body {
 }
 /*#endregion*/
 
+/*#region===================Отзывы*/
+$break1: $breakModile;
+.comments {
+    @include adaptiv-value(padding-top, 170, 50, 1);
+
+    @media (min-width: $break1) {
+        background: url(.././img/comments__bg.png) left / contain no-repeat;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__title {
+        margin-bottom: 60px;
+    }
+
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 0 -20px;
+
+        @media (max-width: $break1) {
+            // justify-content: center;
+            flex-direction: column;
+            max-width: 600px;
+        }
+    }
+
+    &__item {
+        padding: 0 20px;
+        //flex: 0 1 49%;
+        max-width: 49%;
+        display: flex;
+        justify-content: space-between;
+        @include adaptiv-value(margin-bottom, 80, 60, 1);
+        &:last-child {
+            @include adaptiv-value(margin-bottom, 80, 40, 1);
+        }
+        @media (max-width: $break1) {
+            align-items: center;
+            flex: 0 1 auto;
+        }
+    }
+
+    &__img {
+        border-radius: 50%;
+        flex: 0 1 175px;
+        max-width: 100%;
+        margin-right: 20px;
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__description {
+        max-width: 100%;
+        flex: 0 1 580px;
+    }
+
+    &__lable {
+        font-weight: bold;
+    }
+
+    &__btn {
+        @include adaptiv-value(margin-top, 40, 0, 1);
+    }
+}
+
+/*#endregion*/
+
 /*#region===================Почему мы*/
 .why-us {
     $break1: $breakModile;
+    $break2: $mobileWidth;
 
     @include adaptiv-value(padding-top, 175, 60, 1);
     @include adaptiv-value(padding-bottom, 100, 28, 1);
@@ -405,9 +480,6 @@ body {
     }
 
     &__text {
-        @include adaptiv-value(line-height, 30, 15, 1);
-        @include adaptiv-value(font-size, 20, 12, 1);
-
         text-align: center;
         color: #333534;
         max-width: 835px;
@@ -467,9 +539,6 @@ body {
     }
 
     &__item-text {
-        @include adaptiv-value(line-height, 30, 15, 1);
-        @include adaptiv-value(font-size, 20, 12, 1);
-
         text-align: center;
         color: #333534;
         font-weight: 300;
@@ -639,7 +708,6 @@ body {
         margin-bottom: 26px;
 
         @media (max-width: $break2) {
-            // font-weight: 300;
             margin-bottom: 15px;
             font-size: 18px;
         }
@@ -660,6 +728,15 @@ body {
 
             color: #373737;
         }
+        img {
+            margin-left: -5px;
+            margin-right: 10px;
+            width: 40px;
+
+            @media (max-width: $break2) {
+                width: 37px;
+            }
+        }
     }
     &__number {
         display: flex;
@@ -671,6 +748,7 @@ body {
 }
 /*#endregion*/
 
+/*#region===================Заявка отправлена*/
 .sent {
     min-height: 100vh;
     display: flex;
@@ -684,3 +762,4 @@ body {
     padding: 10% 5%;
     background: url(.././img/bg2.png) 0 0 / 100% 100% no-repeat;
 }
+/*#endregion*/
