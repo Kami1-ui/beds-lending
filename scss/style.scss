@@ -423,10 +423,9 @@ $break1: $breakModile;
         justify-content: space-between;
         @include adaptiv-value(margin-bottom, 80, 60, 1);
         &:last-child {
-            @include adaptiv-value(margin-bottom, 80, 40, 1);
+            @include adaptiv-value(margin-bottom, 80, 30, 1);
         }
         @media (max-width: $break1) {
-            align-items: center;
             max-width: 100%;
         }
     }
@@ -448,6 +447,7 @@ $break1: $breakModile;
 
     &__lable {
         font-weight: bold;
+        margin-bottom: 8px;
     }
 
     &__btn {

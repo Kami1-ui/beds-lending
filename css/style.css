@@ -899,15 +899,12 @@ body {
 
 @media (max-width: 1770px) {
   .comments__item:last-child {
-    margin-bottom: calc(40px + 40 * ((100vw - 360px) / 1410));
+    margin-bottom: calc(30px + 50 * ((100vw - 360px) / 1410));
   }
 }
 
 @media (max-width: 767px) {
   .comments__item {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     max-width: 100%;
   }
 }
@@ -934,6 +931,7 @@ body {
 
 .comments__lable {
   font-weight: bold;
+  margin-bottom: 8px;
 }
 
 .comments__btn {
