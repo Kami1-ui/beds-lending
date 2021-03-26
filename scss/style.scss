@@ -1,7 +1,7 @@
 @import "_nullstyle.scss"; //обнуляющие стили
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,300&display=swap"); //шрифты Google
-@import "fonts.scss"; //Мои шрифты
-@import "loader.scss"; //Анимация зпгрузки
+@import "_fonts.scss"; //Мои шрифты
+@import "_loader.scss"; //Анимация зпгрузки
 
 /*#region===================Миксины*/
 $maxWidth: 1920;
