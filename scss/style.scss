@@ -451,7 +451,7 @@ $break1: $breakModile;
     }
 
     &__btn {
-        @include adaptiv-value(margin-top, 40, 0, 1);
+        @include adaptiv-value(margin-top, 40, 10, 1);
     }
 }
 

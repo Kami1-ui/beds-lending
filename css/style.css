@@ -942,7 +942,7 @@ body {
 
 @media (max-width: 1770px) {
   .comments__btn {
-    margin-top: calc(0px + 40 * ((100vw - 360px) / 1410));
+    margin-top: calc(10px + 30 * ((100vw - 360px) / 1410));
   }
 }
 
