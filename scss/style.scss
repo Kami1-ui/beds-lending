@@ -418,7 +418,6 @@ $break1: $breakModile;
 
     &__item {
         padding: 0 20px;
-        //flex: 0 1 49%;
         max-width: 49%;
         display: flex;
         justify-content: space-between;
@@ -428,7 +427,7 @@ $break1: $breakModile;
         }
         @media (max-width: $break1) {
             align-items: center;
-            flex: 0 1 auto;
+            max-width: 100%;
         }
     }
 
