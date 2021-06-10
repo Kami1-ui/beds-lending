@@ -1180,16 +1180,22 @@ body {
 }
 
 .catalog .carusel_reverse .carusel__item-body .price-tag {
+  padding-left: 0px;
   padding-right: 21px;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  bottom: 41px;
   left: auto;
   right: 9px;
   -webkit-transform: rotate(23.2deg);
           transform: rotate(23.2deg);
   background: url(../img/price-tag-reverse.png) center/cover no-repeat;
+}
+
+@media (max-width: 1770px) {
+  .catalog .carusel_reverse .carusel__item-body .price-tag {
+    padding-right: calc(9px + 12 * ((100vw - 360px) / 1410));
+  }
 }
 
 /*#endregion*/
