@@ -1,1 +1,1 @@
-GitHub Pages https://kamilprogram.github.io/beds.github.io/
+GitHub Pages https://kamilprogram.github.io/beds-lending/
