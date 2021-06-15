@@ -870,23 +870,44 @@ $break1: $breakModile;
 
 /*#region===================Обратная связь*/
 .request {
-    $break1: $breakModile;
+    $break1: 1220px;
+    $break2: 840px;
+    $break3: 600px;
 
     @include adaptiv-value(margin-top, 180, 0, 1);
     @include adaptiv-value(margin-bottom, 180, 30, 1);
 
-    @media (max-width: $break1) {
+    @media (max-width: $break2) {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        height: 461px;
-        background: url(.././img/rerquest-img2.png) center / auto 100% no-repeat;
+        // height: 461px;
+        background: url(.././img/rerquest-img2-back.png) center / 100% 100% no-repeat;
+        max-width: 600px;
+        margin-right: auto;
+        margin-left: auto;
+
+        // padding: 32px 0;
+        &__wrapper {
+            max-width: 470px;
+            width: 100%;
+            padding: 30px 0;
+            //border-radius: 16px;
+            background: url(.././img/rerquest-img2.png) center / auto 100% no-repeat;
+        }
+    }
+
+    @media (max-width: $break3) {
+        padding: 54px 0;
+        background: url(.././img/rerquest-img2-back2.png) center / 100% 100% no-repeat;
     }
     &__body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: $break2) {
+        }
     }
 
     &__img {
@@ -896,14 +917,14 @@ $break1: $breakModile;
             max-width: 100%;
         }
 
-        @media (max-width: $break1) {
+        @media (max-width: $break2) {
             display: none;
         }
     }
 
     &__description {
         flex: 0 1 610px;
-        @media (max-width: $break1) {
+        @media (max-width: $break2) {
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -911,9 +932,9 @@ $break1: $breakModile;
     }
 
     &__title {
-        @include adaptiv-value(margin-bottom, 90, 40, 1);
+        @include adaptiv-value(margin-bottom, 90, 20, 1); //90 40
 
-        @media (max-width: $break1) {
+        @media (max-width: $break2) {
             h2 {
                 text-align: center;
                 color: #fff;
@@ -922,6 +943,82 @@ $break1: $breakModile;
     }
 
     &__form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        //@include adaptiv-value(width, 293, 190, 1);
+        margin: 0 -12px;
+
+        /*  &._sending::after {
+            opacity: 1;
+            visibility: visible;
+        }
+ */
+        button {
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px 54px;
+            @media (max-width: $break2) {
+                color: #fff;
+            }
+            /*  
+           
+            border-radius: 0;
+            margin: 0 12px; */
+        }
+
+        &._sending {
+        }
+        @media (max-width: $break1) {
+            flex-direction: column;
+            // margin: 0;
+        }
+    }
+
+    &__item {
+        margin-bottom: 16px;
+        padding: 0 12px;
+        /*     width: 50%; */
+        flex: 0 1 50%;
+
+        textarea,
+        input {
+            width: 100%;
+            border: 1px solid #000000;
+            padding: 8px 24px;
+
+            @include adaptiv-value(font-size, 18, 14, 1);
+            @include adaptiv-value(line-height, 35, 20, 1);
+            color: #000;
+            // @include adaptiv-value(margin-bottom, 40, 20, 1);
+            &::placeholder {
+                font-style: italic;
+                color: #000;
+            }
+
+            @media (max-width: $break2) {
+                background-color: transparent;
+                border-color: #fff;
+                color: #fff;
+                &::placeholder {
+                    color: #fff;
+                }
+            }
+            &._error {
+                border: 2px solid #e77e8a;
+                @media (max-width: $break2) {
+                    //border-color: #000000;
+                }
+            }
+        }
+
+        &.message {
+            padding: 0 12px;
+            flex: 0 1 100%;
+        }
+    }
+
+    /* &__form {
         display: flex;
         flex-direction: column;
 
@@ -949,7 +1046,7 @@ $break1: $breakModile;
         button {
             margin-top: 20px;
         }
-    }
+    } */
 }
 /*#endregion*/
 

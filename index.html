@@ -380,22 +380,42 @@
     </section>
 
     <section class="request" id="request">
-        <div class="container">
-            <div class="request__body">
-                <div class="request__img">
-                    <img src="./img/rerquest-img.png" alt="request-img">
-                </div>
-                <div class="request__description">
-                    <div class="title request__title">
-                        <h2>Хотите узнать больше?</h2>
+        <div class="request__wrapper">
+
+            <div class="container ">
+                <div class="request__body">
+                    <div class="request__img">
+                        <img src="./img/rerquest-img.png" alt="request-img">
                     </div>
-                    <form class="request__form" action="mail.php" method="POST">
-                        <input type="text" name="Name" placeholder="Имя" required>
-                        <input type="text" name="Phone" placeholder="Телефон" required>
-                        <button type="submit" class="btn-pink">Оставить заявку</button>
-                    </form>
+                    <div class="request__description">
+                        <div class="title request__title">
+                            <h2>Оставить заявку</h2>
+                        </div>
+                        <form class="request__form " id="form">
+                            <!-- action="mail.php" method="POST" -->
+                            <div class="request__item">
+                                <input type="text" class=" _req" name="name" placeholder="Имя">
+                            </div>
+                            <div class="request__item">
+                                <input type="text" class=" _req" name="surname" placeholder="Фамилия">
+                            </div>
+                            <div class="request__item">
+                                <input type="text" class=" _req" name="phone" placeholder="Телефон">
+                            </div>
+                            <div class="request__item">
+                                <input type="text" class=" _req _email" name="mail" placeholder="Почта">
+
+                            </div>
+                            <div class="request__item message">
+                                <textarea name="message" placeholder="Добавьте сообщение" id="" cols="30"
+                                    rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn-pink">Отправить</button>
+                        </form>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 

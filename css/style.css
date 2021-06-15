@@ -1603,6 +1603,35 @@ body {
 .request {
   margin-top: 180px;
   margin-bottom: 180px;
+  /* &__form {
+        display: flex;
+        flex-direction: column;
+
+        @include adaptiv-value(width, 293, 190, 1);
+        input {
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 25px;
+            padding: 8px 36px;
+
+            @include adaptiv-value(font-size, 18, 14, 1);
+            @include adaptiv-value(line-height, 35, 20, 1);
+
+            @include adaptiv-value(margin-bottom, 40, 20, 1);
+            @media (max-width: $break1) {
+                background-color: transparent;
+                border-color: #fff;
+                color: #fff;
+                &::placeholder {
+                    color: #fff;
+                }
+            }
+        }
+
+        button {
+            margin-top: 20px;
+        }
+    } */
 }
 
 @media (max-width: 1770px) {
@@ -1617,7 +1646,7 @@ body {
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 840px) {
   .request {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1628,8 +1657,23 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    height: 461px;
+    background: url(.././img/rerquest-img2-back.png) center/100% 100% no-repeat;
+    max-width: 600px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .request__wrapper {
+    max-width: 470px;
+    width: 100%;
+    padding: 30px 0;
     background: url(.././img/rerquest-img2.png) center/auto 100% no-repeat;
+  }
+}
+
+@media (max-width: 600px) {
+  .request {
+    padding: 54px 0;
+    background: url(.././img/rerquest-img2-back2.png) center/100% 100% no-repeat;
   }
 }
 
@@ -1656,7 +1700,7 @@ body {
   max-width: 100%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 840px) {
   .request__img {
     display: none;
   }
@@ -1668,7 +1712,7 @@ body {
           flex: 0 1 610px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 840px) {
   .request__description {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1689,11 +1733,11 @@ body {
 
 @media (max-width: 1770px) {
   .request__title {
-    margin-bottom: calc(40px + 50 * ((100vw - 360px) / 1410));
+    margin-bottom: calc(20px + 70 * ((100vw - 360px) / 1410));
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 840px) {
   .request__title h2 {
     text-align: center;
     color: #fff;
@@ -1704,70 +1748,136 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 293px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 0 -12px;
+  /*  &._sending::after {
+            opacity: 1;
+            visibility: visible;
+        }
+ */
 }
 
-@media (max-width: 1770px) {
-  .request__form {
-    width: calc(190px + 103 * ((100vw - 360px) / 1410));
+.request__form button {
+  margin-top: 20px;
+  font-size: 20px;
+  padding: 10px 54px;
+  /*  
+           
+            border-radius: 0;
+            margin: 0 12px; */
+}
+
+@media (max-width: 840px) {
+  .request__form button {
+    color: #fff;
   }
 }
 
-.request__form input {
+@media (max-width: 1220px) {
+  .request__form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.request__item {
+  margin-bottom: 16px;
+  padding: 0 12px;
+  /*     width: 50%; */
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+
+.request__item textarea,
+.request__item input {
+  width: 100%;
   border: 1px solid #000000;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  border-radius: 25px;
-  padding: 8px 36px;
+  padding: 8px 24px;
   font-size: 18px;
   line-height: 35px;
-  margin-bottom: 40px;
+  color: #000;
 }
 
 @media (max-width: 1770px) {
-  .request__form input {
+  .request__item textarea,
+  .request__item input {
     font-size: calc(14px + 4 * ((100vw - 360px) / 1410));
   }
 }
 
 @media (max-width: 1770px) {
-  .request__form input {
+  .request__item textarea,
+  .request__item input {
     line-height: calc(20px + 15 * ((100vw - 360px) / 1410));
   }
 }
 
-@media (max-width: 1770px) {
-  .request__form input {
-    margin-bottom: calc(20px + 20 * ((100vw - 360px) / 1410));
-  }
+.request__item textarea::-webkit-input-placeholder,
+.request__item input::-webkit-input-placeholder {
+  font-style: italic;
+  color: #000;
 }
 
-@media (max-width: 767px) {
-  .request__form input {
+.request__item textarea:-ms-input-placeholder,
+.request__item input:-ms-input-placeholder {
+  font-style: italic;
+  color: #000;
+}
+
+.request__item textarea::-ms-input-placeholder,
+.request__item input::-ms-input-placeholder {
+  font-style: italic;
+  color: #000;
+}
+
+.request__item textarea::placeholder,
+.request__item input::placeholder {
+  font-style: italic;
+  color: #000;
+}
+
+@media (max-width: 840px) {
+  .request__item textarea,
+  .request__item input {
     background-color: transparent;
     border-color: #fff;
     color: #fff;
   }
-  .request__form input::-webkit-input-placeholder {
+  .request__item textarea::-webkit-input-placeholder,
+  .request__item input::-webkit-input-placeholder {
     color: #fff;
   }
-  .request__form input:-ms-input-placeholder {
+  .request__item textarea:-ms-input-placeholder,
+  .request__item input:-ms-input-placeholder {
     color: #fff;
   }
-  .request__form input::-ms-input-placeholder {
+  .request__item textarea::-ms-input-placeholder,
+  .request__item input::-ms-input-placeholder {
     color: #fff;
   }
-  .request__form input::placeholder {
+  .request__item textarea::placeholder,
+  .request__item input::placeholder {
     color: #fff;
   }
 }
 
-.request__form button {
-  margin-top: 20px;
+.request__item textarea._error,
+.request__item input._error {
+  border: 2px solid #e77e8a;
+}
+
+.request__item.message {
+  padding: 0 12px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 100%;
+          flex: 0 1 100%;
 }
 
 /*#endregion*/
