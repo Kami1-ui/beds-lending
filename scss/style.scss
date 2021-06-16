@@ -318,6 +318,324 @@ body {
 }
 /*#endregion*/
 
+/*#region===================Каталог*/
+
+.catalog {
+    $break1: 1362px;
+    $break2: 990px; //1100px;
+    $break3: 600px; //1100px;
+
+    @include adaptiv-value(padding-top, 90, 50, 1);
+    max-width: 1535px;
+    margin: 0 auto;
+
+    .section-color-yellow {
+        background: url(../img/catalog-back1.png) 0 0/100% 100% no-repeat;
+        @media (max-width: $break2) {
+            background: url(../img/catalog-back-min1.png) 0 0/100% 100% no-repeat;
+        }
+        .slick-next,
+        .slick-prev {
+            fill: #ffd854;
+        }
+    }
+    .section-color-green {
+        background: url(../img/catalog-back2.png) 0 0/100% 100% no-repeat;
+        @media (max-width: $break2) {
+            background: url(../img/catalog-back-min2.png) 0 0/100% 100% no-repeat;
+        }
+        .slick-next,
+        .slick-prev {
+            fill: #37b19c;
+        }
+    }
+
+    .section-color-orange {
+        background: url(../img/catalog-back3.png) 0 0/100% 100% no-repeat;
+        @media (max-width: $break2) {
+            background: url(../img/catalog-back-min3.png) 0 0/100% 100% no-repeat;
+        }
+
+        .slick-next,
+        .slick-prev {
+            fill: #fe7c2a;
+        }
+    }
+
+    @media (max-width: $break2) {
+        max-width: 768px;
+        &__item-description {
+            order: 2;
+        }
+        &__carusel {
+            order: 1;
+        }
+    }
+
+    &__title {
+        margin-bottom: 92px;
+        h2 {
+            text-align: center;
+        }
+    }
+
+    &__item {
+        padding: 93px 42px 69px 125px;
+        margin-bottom: 92px;
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+
+        @media (max-width: $break1) {
+            padding-left: 80px;
+            padding-bottom: 40px;
+        }
+        @media (max-width: $break2) {
+            flex-direction: column;
+            padding: 36px 0;
+        }
+
+        &_reverse {
+            padding: 93px 102px 69px 75px;
+
+            @media (max-width: $break1) {
+                padding-right: 80px;
+            }
+            @media (max-width: $break2) {
+                flex-direction: column;
+                padding: 36px 0;
+            }
+            .catalog {
+                &__item-description {
+                    margin-right: 0;
+                    margin-left: 24px;
+                    order: 2;
+
+                    @media (max-width: $break1) {
+                        margin-bottom: 0;
+                    }
+
+                    @media (max-width: $break2) {
+                        margin: 0;
+                        flex: 1 1 auto;
+                        background-color: transparent;
+                        padding: 12px 28px 0;
+                    }
+                }
+                &__carusel {
+                    order: 1;
+                }
+            }
+        }
+    }
+
+    &__item-description {
+        flex: 0 1 617px;
+        border-radius: 15px;
+
+        background-color: #fff;
+        color: #000000;
+
+        padding: 32px 28px;
+        margin-bottom: 54px;
+        margin-right: 24px;
+
+        @media (max-width: $break1) {
+            margin-bottom: 0;
+        }
+
+        @media (max-width: $break2) {
+            margin: 0;
+            flex: 1 1 auto;
+            background-color: transparent;
+            padding: 12px 28px 0;
+        }
+
+        h3 {
+            font-weight: bold;
+            font-size: 22px;
+            line-height: 35px;
+            margin-bottom: 30px;
+            @media (max-width: $break2) {
+                margin-bottom: 18px;
+            }
+        }
+        p {
+            @include adaptiv-value(line-height, 26, 22, 1);
+            @include adaptiv-value(font-size, 18, 14, 1);
+
+            /* font-size: 18px;
+            line-height: 25px; */
+            margin-bottom: 15px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__carusel {
+        min-width: 0;
+        flex: 0 1 727px;
+
+        @media (max-width: $break2) {
+            order: 1;
+            margin: 0 auto;
+            max-width: 500px;
+            // max-width: 100%;
+            flex: 1 1 auto;
+        }
+        @media (max-width: $break3) {
+            max-width: 100%;
+        }
+    }
+
+    .carusel {
+        // padding-right: 80px;
+        @include adaptiv-value(padding-right, 80, 50, 1);
+        position: relative;
+        @media (max-width: $break2) {
+            height: auto;
+            margin: 0 auto;
+        }
+
+        .slick {
+            &-next,
+            &-prev {
+                position: absolute;
+                //width: 66px;
+                //height: 66px;
+
+                @include adaptiv-value(width, 66, 40, 1);
+                @include adaptiv-value(height, 66, 40, 1);
+
+                top: 50%;
+                cursor: pointer;
+            }
+
+            &-next {
+                display: block;
+                right: 9px;
+            }
+            &-prev {
+                display: none;
+            }
+            &-track {
+                display: flex;
+            }
+            &-list {
+                overflow: hidden;
+            }
+        }
+
+        &__item {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        &__item-body {
+            //height: 484px;
+            @include adaptiv-value(height, 484, 300, 1);
+
+            // padding-bottom: 54px;
+            @include adaptiv-value(padding-bottom, 54, 18, 1);
+            //padding-left: 48px;
+            @include adaptiv-value(padding-left, 54, 15, 1);
+
+            position: relative;
+
+            img {
+                height: 100%;
+                max-width: 100%;
+                object-fit: cover;
+                border-radius: 15px;
+            }
+
+            @media (max-width: $break2) {
+                height: auto;
+                img {
+                    width: 100%;
+                    //width: auto;
+                    max-width: 100%;
+                }
+            }
+            .price-tag {
+                //padding-left: 21px;
+                @include adaptiv-value(padding-left, 21, 9, 1);
+
+                //width: 212px;
+                //height: 104px;
+                @include adaptiv-value(width, 212, 92, 1);
+                @include adaptiv-value(height, 104, 45, 1);
+
+                position: absolute;
+                //bottom: 41px;
+                @include adaptiv-value(bottom, 41, 18, 1);
+                left: 9px;
+
+                font-weight: bold;
+
+                // font-size: 29px;
+                // line-height: 35px;
+                @include adaptiv-value(font-size, 28, 13, 1);
+
+                color: #414141;
+                display: flex;
+
+                align-items: center;
+
+                transform: rotate(-23.2deg);
+                background: url(../img/price-tag.png) center/cover no-repeat;
+            }
+        }
+
+        &_reverse {
+            padding-right: 0;
+
+            //padding-left: 80px;
+            @include adaptiv-value(padding-left, 80, 50, 1);
+
+            .slick {
+                &-next {
+                    display: none;
+                }
+                &-prev {
+                    display: block;
+                    left: 9px;
+                }
+            }
+
+            .carusel {
+                &__item {
+                    display: flex;
+                    justify-content: flex-start;
+                }
+
+                &__item-body {
+                    padding-left: 0;
+
+                    //padding-right: 48px;
+                    @include adaptiv-value(padding-right, 48, 15, 1);
+
+                    .price-tag {
+                        padding-left: 0px;
+                        //padding-right: 21px;
+                        @include adaptiv-value(padding-right, 21, 9, 1);
+
+                        justify-content: flex-end;
+
+                        left: auto;
+                        right: 9px;
+
+                        transform: rotate(23.2deg);
+                        background: url(../img/price-tag-reverse.png) center/cover no-repeat;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*#endregion*/
 /*#region===================О нас*/
 .about {
     $break1: 1160px;
@@ -552,23 +870,44 @@ $break1: $breakModile;
 
 /*#region===================Обратная связь*/
 .request {
-    $break1: $breakModile;
+    $break1: 1220px;
+    $break2: 840px;
+    $break3: 600px;
 
     @include adaptiv-value(margin-top, 180, 0, 1);
     @include adaptiv-value(margin-bottom, 180, 30, 1);
 
-    @media (max-width: $break1) {
+    @media (max-width: $break2) {
         display: flex;
         align-items: center;
         justify-content: center;
 
-        height: 461px;
-        background: url(.././img/rerquest-img2.png) center / auto 100% no-repeat;
+        // height: 461px;
+        background: url(.././img/rerquest-img2-back.png) center / 100% 100% no-repeat;
+        max-width: 600px;
+        margin-right: auto;
+        margin-left: auto;
+
+        // padding: 32px 0;
+        &__wrapper {
+            max-width: 470px;
+            width: 100%;
+            padding: 30px 0;
+            //border-radius: 16px;
+            background: url(.././img/rerquest-img2.png) center / auto 100% no-repeat;
+        }
+    }
+
+    @media (max-width: $break3) {
+        padding: 54px 0;
+        background: url(.././img/rerquest-img2-back2.png) center / 100% 100% no-repeat;
     }
     &__body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width: $break2) {
+        }
     }
 
     &__img {
@@ -578,14 +917,14 @@ $break1: $breakModile;
             max-width: 100%;
         }
 
-        @media (max-width: $break1) {
+        @media (max-width: $break2) {
             display: none;
         }
     }
 
     &__description {
         flex: 0 1 610px;
-        @media (max-width: $break1) {
+        @media (max-width: $break2) {
             display: flex;
             align-items: center;
             flex-direction: column;
@@ -593,9 +932,9 @@ $break1: $breakModile;
     }
 
     &__title {
-        @include adaptiv-value(margin-bottom, 90, 40, 1);
+        @include adaptiv-value(margin-bottom, 90, 20, 1); //90 40
 
-        @media (max-width: $break1) {
+        @media (max-width: $break2) {
             h2 {
                 text-align: center;
                 color: #fff;
@@ -604,6 +943,82 @@ $break1: $breakModile;
     }
 
     &__form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        //@include adaptiv-value(width, 293, 190, 1);
+        margin: 0 -12px;
+
+        /*  &._sending::after {
+            opacity: 1;
+            visibility: visible;
+        }
+ */
+        button {
+            margin-top: 20px;
+            font-size: 20px;
+            padding: 10px 54px;
+            @media (max-width: $break2) {
+                color: #fff;
+            }
+            /*  
+           
+            border-radius: 0;
+            margin: 0 12px; */
+        }
+
+        &._sending {
+        }
+        @media (max-width: $break1) {
+            flex-direction: column;
+            // margin: 0;
+        }
+    }
+
+    &__item {
+        margin-bottom: 16px;
+        padding: 0 12px;
+        /*     width: 50%; */
+        flex: 0 1 50%;
+
+        textarea,
+        input {
+            width: 100%;
+            border: 1px solid #000000;
+            padding: 8px 24px;
+
+            @include adaptiv-value(font-size, 18, 14, 1);
+            @include adaptiv-value(line-height, 35, 20, 1);
+            color: #000;
+            // @include adaptiv-value(margin-bottom, 40, 20, 1);
+            &::placeholder {
+                font-style: italic;
+                color: #000;
+            }
+
+            @media (max-width: $break2) {
+                background-color: transparent;
+                border-color: #fff;
+                color: #fff;
+                &::placeholder {
+                    color: #fff;
+                }
+            }
+            &._error {
+                border: 2px solid #e77e8a;
+                @media (max-width: $break2) {
+                    //border-color: #000000;
+                }
+            }
+        }
+
+        &.message {
+            padding: 0 12px;
+            flex: 0 1 100%;
+        }
+    }
+
+    /* &__form {
         display: flex;
         flex-direction: column;
 
@@ -631,7 +1046,7 @@ $break1: $breakModile;
         button {
             margin-top: 20px;
         }
-    }
+    } */
 }
 /*#endregion*/
 
