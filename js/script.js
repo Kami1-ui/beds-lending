@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 body: formData
             });
 
-            console.log(response);
             if (response.ok) {
                 let result = await response.json();
                 alert(result.message);
