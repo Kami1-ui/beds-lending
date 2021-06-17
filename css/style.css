@@ -1003,6 +1003,8 @@ body {
   height: 66px;
   top: 50%;
   cursor: pointer;
+  -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%);
 }
 
 @media (max-width: 1770px) {
@@ -1603,35 +1605,6 @@ body {
 .request {
   margin-top: 180px;
   margin-bottom: 180px;
-  /* &__form {
-        display: flex;
-        flex-direction: column;
-
-        @include adaptiv-value(width, 293, 190, 1);
-        input {
-            border: 1px solid #000000;
-            box-sizing: border-box;
-            border-radius: 25px;
-            padding: 8px 36px;
-
-            @include adaptiv-value(font-size, 18, 14, 1);
-            @include adaptiv-value(line-height, 35, 20, 1);
-
-            @include adaptiv-value(margin-bottom, 40, 20, 1);
-            @media (max-width: $break1) {
-                background-color: transparent;
-                border-color: #fff;
-                color: #fff;
-                &::placeholder {
-                    color: #fff;
-                }
-            }
-        }
-
-        button {
-            margin-top: 20px;
-        }
-    } */
 }
 
 @media (max-width: 1770px) {
@@ -1754,21 +1727,12 @@ body {
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin: 0 -12px;
-  /*  &._sending::after {
-            opacity: 1;
-            visibility: visible;
-        }
- */
 }
 
 .request__form button {
   margin-top: 20px;
   font-size: 20px;
   padding: 10px 54px;
-  /*  
-           
-            border-radius: 0;
-            margin: 0 12px; */
 }
 
 @media (max-width: 840px) {
@@ -1789,7 +1753,6 @@ body {
 .request__item {
   margin-bottom: 16px;
   padding: 0 12px;
-  /*     width: 50%; */
   -webkit-box-flex: 0;
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;

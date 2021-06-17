@@ -490,7 +490,6 @@ body {
     }
 
     .carusel {
-        // padding-right: 80px;
         @include adaptiv-value(padding-right, 80, 50, 1);
         position: relative;
         @media (max-width: $break2) {
@@ -502,14 +501,13 @@ body {
             &-next,
             &-prev {
                 position: absolute;
-                //width: 66px;
-                //height: 66px;
 
                 @include adaptiv-value(width, 66, 40, 1);
                 @include adaptiv-value(height, 66, 40, 1);
 
                 top: 50%;
                 cursor: pointer;
+                transform: translate(0, -50%);
             }
 
             &-next {
@@ -533,12 +531,9 @@ body {
         }
 
         &__item-body {
-            //height: 484px;
             @include adaptiv-value(height, 484, 300, 1);
 
-            // padding-bottom: 54px;
             @include adaptiv-value(padding-bottom, 54, 18, 1);
-            //padding-left: 48px;
             @include adaptiv-value(padding-left, 54, 15, 1);
 
             position: relative;
@@ -554,28 +549,21 @@ body {
                 height: auto;
                 img {
                     width: 100%;
-                    //width: auto;
                     max-width: 100%;
                 }
             }
             .price-tag {
-                //padding-left: 21px;
                 @include adaptiv-value(padding-left, 21, 9, 1);
 
-                //width: 212px;
-                //height: 104px;
                 @include adaptiv-value(width, 212, 92, 1);
                 @include adaptiv-value(height, 104, 45, 1);
 
                 position: absolute;
-                //bottom: 41px;
                 @include adaptiv-value(bottom, 41, 18, 1);
                 left: 9px;
 
                 font-weight: bold;
 
-                // font-size: 29px;
-                // line-height: 35px;
                 @include adaptiv-value(font-size, 28, 13, 1);
 
                 color: #414141;
@@ -591,7 +579,6 @@ body {
         &_reverse {
             padding-right: 0;
 
-            //padding-left: 80px;
             @include adaptiv-value(padding-left, 80, 50, 1);
 
             .slick {
@@ -613,12 +600,10 @@ body {
                 &__item-body {
                     padding-left: 0;
 
-                    //padding-right: 48px;
                     @include adaptiv-value(padding-right, 48, 15, 1);
 
                     .price-tag {
                         padding-left: 0px;
-                        //padding-right: 21px;
                         @include adaptiv-value(padding-right, 21, 9, 1);
 
                         justify-content: flex-end;
@@ -882,18 +867,15 @@ $break1: $breakModile;
         align-items: center;
         justify-content: center;
 
-        // height: 461px;
         background: url(.././img/rerquest-img2-back.png) center / 100% 100% no-repeat;
         max-width: 600px;
         margin-right: auto;
         margin-left: auto;
 
-        // padding: 32px 0;
         &__wrapper {
             max-width: 470px;
             width: 100%;
             padding: 30px 0;
-            //border-radius: 16px;
             background: url(.././img/rerquest-img2.png) center / auto 100% no-repeat;
         }
     }
@@ -932,7 +914,7 @@ $break1: $breakModile;
     }
 
     &__title {
-        @include adaptiv-value(margin-bottom, 90, 20, 1); //90 40
+        @include adaptiv-value(margin-bottom, 90, 20, 1);
 
         @media (max-width: $break2) {
             h2 {
@@ -946,14 +928,8 @@ $break1: $breakModile;
         display: flex;
         flex-wrap: wrap;
         justify-content: flex-end;
-        //@include adaptiv-value(width, 293, 190, 1);
         margin: 0 -12px;
 
-        /*  &._sending::after {
-            opacity: 1;
-            visibility: visible;
-        }
- */
         button {
             margin-top: 20px;
             font-size: 20px;
@@ -961,24 +937,18 @@ $break1: $breakModile;
             @media (max-width: $break2) {
                 color: #fff;
             }
-            /*  
-           
-            border-radius: 0;
-            margin: 0 12px; */
         }
 
         &._sending {
         }
         @media (max-width: $break1) {
             flex-direction: column;
-            // margin: 0;
         }
     }
 
     &__item {
         margin-bottom: 16px;
         padding: 0 12px;
-        /*     width: 50%; */
         flex: 0 1 50%;
 
         textarea,
@@ -990,7 +960,6 @@ $break1: $breakModile;
             @include adaptiv-value(font-size, 18, 14, 1);
             @include adaptiv-value(line-height, 35, 20, 1);
             color: #000;
-            // @include adaptiv-value(margin-bottom, 40, 20, 1);
             &::placeholder {
                 font-style: italic;
                 color: #000;
@@ -1017,36 +986,6 @@ $break1: $breakModile;
             flex: 0 1 100%;
         }
     }
-
-    /* &__form {
-        display: flex;
-        flex-direction: column;
-
-        @include adaptiv-value(width, 293, 190, 1);
-        input {
-            border: 1px solid #000000;
-            box-sizing: border-box;
-            border-radius: 25px;
-            padding: 8px 36px;
-
-            @include adaptiv-value(font-size, 18, 14, 1);
-            @include adaptiv-value(line-height, 35, 20, 1);
-
-            @include adaptiv-value(margin-bottom, 40, 20, 1);
-            @media (max-width: $break1) {
-                background-color: transparent;
-                border-color: #fff;
-                color: #fff;
-                &::placeholder {
-                    color: #fff;
-                }
-            }
-        }
-
-        button {
-            margin-top: 20px;
-        }
-    } */
 }
 /*#endregion*/
 
